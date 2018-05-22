@@ -1,5 +1,9 @@
 const DeviceParser = require('./DeviceParser');
 const AccessoryParser = require('./AccessoryParser');
+///
+const moment = require('moment');
+var logger = require("mcuiot-logger").logger;
+logger = new logger('1z0Jztm3fwtiRtLKn1qt9j7HlouJNjMFjjZFFZcCFJws');
 
 class ContactSensorParser extends DeviceParser {
     constructor(model, platform) {
@@ -72,6 +76,8 @@ class ContactSensorContactSensorParser extends AccessoryParser {
                             var value = that.getContactSensorStateCharacteristicValue(result, null);
                             if(null != value) {
                                 callback(null, value ? that.Characteristic.ContactSensorState.CONTACT_DETECTED : that.Characteristic.ContactSensorState.CONTACT_NOT_DETECTED);
+                               //
+                                this.logger.storeData('Open');
                             } else {
                                 callback(new Error('get value fail: ' + result));
                             }
