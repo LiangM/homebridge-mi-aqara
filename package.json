@@ -18,4 +18,9 @@
     "node": ">=0.12.0",
     "homebridge": ">=0.4.1"
   }
+  "dependencies": {
+    "moment": "^2.18.1",
+    "fakegato-history": "^0.5.1",
+    "mcuiot-logger": "^0.0.7"
+  }
 }
