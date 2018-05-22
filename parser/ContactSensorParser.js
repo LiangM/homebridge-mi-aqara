@@ -77,7 +77,7 @@ class ContactSensorContactSensorParser extends AccessoryParser {
                             if(null != value) {
                                 callback(null, value ? that.Characteristic.ContactSensorState.CONTACT_DETECTED : that.Characteristic.ContactSensorState.CONTACT_NOT_DETECTED);
                                //
-                                this.logger.storeData('Open');
+                                this.logger.storeData(value ? 'CLOSE':'OPEN');
                             } else {
                                 callback(new Error('get value fail: ' + result));
                             }
